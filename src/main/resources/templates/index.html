@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  th:include="layouts/base :: page" th:with="css='home'">
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div th:fragment="content">
+			<!-- this page is copied and modified from https://getmdl.io/templates/index.html (ANDROID.COM MDL SKIN) -->
+			<div class="android-be-together-section mdl-typography--text-center">
+				<div class="logo-font android-slogan" th:text="#{app.name}"></div>
+				<div class="logo-font android-sub-slogan" th:text="#{app.subtitle}"></div>
+				<div class="logo-font android-create-character">
+					<a href=""><img src="images/andy.png" />create your avatar</a>
+				</div>
+
+				<a href="#screens">
+					<button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+						<i class="material-icons">expand_more</i>
+					</button>
+				</a>
+			</div>
+			<div class="android-screen-section mdl-typography--text-center">
+				<a name="screens"></a>
+				<div class="mdl-typography--display-1-color-contrast">Compatible with Android & iOS</div>
+				<div class="android-screens">
+					<div class="android-wear android-screen">
+						<a class="android-image-link" href="">
+							<img class="android-screen-image" src="images/wear-silver-on.png" />
+							<img class="android-screen-image" src="images/wear-black-on.png" />
+						</a>
+						<a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Android</a>
+					</div>
+					<div class="android-phone android-screen">
+						<a class="android-image-link" href="">
+							<img class="android-screen-image" src="images/nexus6-on.jpg" />
+						</a>
+						<a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">iOS</a>
+					</div>
+				</div>
+			</div>
+			<div class="android-wear-section">
+				<div class="android-wear-band">
+					<div class="android-wear-band-text">
+						<div class="mdl-typography--display-2 mdl-typography--font-thin">Fully immersive experience</div>
+						<p class="mdl-typography--headline mdl-typography--font-thin">
+							Experience your class like never before.
+						</p>
+						<p>
+							<a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" href="">
+								Read more&nbsp;<i class="material-icons">chevron_right</i>
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="android-customized-section">
+				<div class="android-customized-section-text">
+					<div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Customise your student's learning experience</div>
+					<p class="mdl-typography--font-light">
+						blah blah blah blah blah blah blah blah blah blah blah blah
+						<br>
+							<a href="" class="android-link mdl-typography--font-light">Customise your class</a>
+					</p>
+				</div>
+				<div class="android-customized-section-image"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+	</head>
+	<body>
+
+		<div th:fragment="navigator" class="android-header mdl-layout__header mdl-layout__header--waterfall">
+			<div class="mdl-layout__header-row">
+				<span class="android-title mdl-layout-title">
+					<img class="android-logo-image" src="images/android-logo.png" />
+				</span>
+				<!-- Add spacer, to align navigation to the right in desktop -->
+				<div class="android-header-spacer mdl-layout-spacer"></div>
+				<!-- Navigation -->
+				<div class="android-navigation-container">
+					<nav class="android-navigation mdl-navigation">
+						<a th:if="${#authorization.expression('isAuthenticated()')}" class="mdl-navigation__link mdl-typography--text-uppercase" href="/dashboard" th:text="#{menu.dashboard}"></a>
+						<a class="mdl-navigation__link mdl-typography--text-uppercase" href="" th:text="#{menu.showcases}"></a>
+						<a class="mdl-navigation__link mdl-typography--text-uppercase" href="" th:text="#{menu.about}"></a>
+						<a class="mdl-navigation__link mdl-typography--text-uppercase" href="" th:text="#{menu.contact}"></a>
+						<a th:if="${#authorization.expression('isAuthenticated()')}" class="mdl-navigation__link mdl-typography--text-uppercase" href="/logout" th:text="#{menu.logout}"></a>
+						<a th:if="${#authorization.expression('!isAuthenticated()')}" class="mdl-navigation__link mdl-typography--text-uppercase" href="/login" th:text="#{menu.login}"></a>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<div th:fragment="drawer" class="android-drawer mdl-layout__drawer">
+			<span class="mdl-layout-title">
+				<img class="android-logo-image" src="images/android-logo-white.png" />
+			</span>
+			<nav class="mdl-navigation">
+				<span class="mdl-navigation__link" href="" th:text="#{menu.title.account}"></span>
+				<a th:if="${#authorization.expression('!isAuthenticated()')}" class="mdl-navigation__link" href="/login" th:text="#{menu.login}"></a>
+				<a th:if="${#authorization.expression('isAuthenticated()')}" class="mdl-navigation__link" href="/dashboard" th:text="#{menu.dashboard}"></a>
+				<a th:if="${#authorization.expression('isAuthenticated()')}" class="mdl-navigation__link" href="/logout" th:text="#{menu.logout}"></a>
+				<div class="android-drawer-separator"></div>
+				<a class="mdl-navigation__link" href="" th:text="#{menu.showcases}"></a>
+				<div class="android-drawer-separator"></div>
+				<span class="mdl-navigation__link" href="" th:text="#{menu.title.us}"></span>
+				<a class="mdl-navigation__link" href="" th:text="#{menu.about}"></a>
+				<a class="mdl-navigation__link" href="" th:text="#{menu.contact}"></a>
+			</nav>
+		</div>
+
+		<div th:fragment="dash-drawer" class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+			<header class="demo-drawer-header">
+				<img src="images/user.jpg" class="demo-avatar">
+					<div class="demo-avatar-dropdown">
+						<span th:text="${user.email}"></span>
+						<div class="mdl-layout-spacer"></div>
+					</div>
+			</header>
+			<nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+				<a class="mdl-navigation__link" href="/dashboard"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i><div th:text="#{menu.dashboard}"></div></a>
+				<a class="mdl-navigation__link" href="/presentation"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">slideshow</i><div th:text="#{menu.present}"></div></a>
+				<a class="mdl-navigation__link" href="/logout"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">power_settings_new</i><div th:text="#{menu.logout}"></div></a>
+				<div class="mdl-layout-spacer"></div>
+				<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+			</nav>
+		</div>
+
+	</body>
+</html>

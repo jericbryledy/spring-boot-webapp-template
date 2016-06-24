@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org"
-	  th:include="layouts/dashboard :: page"
-	  th:with="css='dashboard'">
-	<head>
-		<title></title>
+	  th:include="layouts/dashboard :: page">
+	<head th:fragment="additionalHead">
+		<title th:text="#{dashboard.title}"></title>
+
+		<link rel="stylesheet" href="/css/dashboard.css" />
 	</head>
 	<body>
 		<main th:fragment="content" class="mdl-layout__content mdl-color--grey-100">

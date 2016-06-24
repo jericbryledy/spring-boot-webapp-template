@@ -2,7 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org"
 	  th:fragment="page">
-	<head th:replace="fragments/head :: head" th:with="css=${css}"></head>
+	<head th:replace="fragments/head :: head">
+		<title></title>
+	</head>
 	<body>
 		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 

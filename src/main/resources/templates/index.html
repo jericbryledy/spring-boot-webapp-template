@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org"
-	  th:include="layouts/base :: page" th:with="css='home'">
-	<head>
-		<title></title>
+	  th:include="layouts/base :: page">
+	<head th:fragment="additionalHead">
+		<title th:text="#{landing.title}"></title>
+
+		<link rel="stylesheet" href="/css/home.css" />
 	</head>
 	<body>
 		<div th:fragment="content">

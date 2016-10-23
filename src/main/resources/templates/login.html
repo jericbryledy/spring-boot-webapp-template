@@ -15,13 +15,13 @@
 					<div th:if="${param.error}" th:text="#{form.login.error}"></div>
 					<form th:action="@{/login}" method="post">
 						<div>
-							<div class="mdl-textfield mdl-js-textfield">
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 								<input class="mdl-textfield__input" type="text" id="username" name="username" />
 								<label class="mdl-textfield__label" for="username" th:text="#{form.username}"></label>
 							</div>
 						</div>
 						<div>
-							<div class="mdl-textfield mdl-js-textfield">
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 								<input class="mdl-textfield__input" type="password" id="password" name="password" />
 								<label class="mdl-textfield__label" for="password" th:text="#{form.password}"></label>
 							</div>

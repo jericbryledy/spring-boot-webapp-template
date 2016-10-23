@@ -3,11 +3,14 @@
 	  xmlns:th="http://www.thymeleaf.org"
 	  th:include="layouts/dashboard :: page">
 	<head th:fragment="additionalHead">
-		<title th:text="#{dashboard.title}"></title>
+		<title th:remove="tag"></title>
 
 		<link rel="stylesheet" href="/css/dashboard.css" />
 	</head>
 	<body>
+		<div th:fragment="title">
+			<div th:text="#{dashboard.title}" th:remove="tag"></div>
+		</div>
 		<main th:fragment="content" class="mdl-layout__content mdl-color--grey-100">
 			<!-- this page is copied and modified from https://getmdl.io/templates/index.html (DASHBOARD) -->
 			<div class="mdl-grid demo-content">

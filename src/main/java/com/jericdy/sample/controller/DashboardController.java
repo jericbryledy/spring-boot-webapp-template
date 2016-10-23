@@ -19,7 +19,7 @@ public class DashboardController {
 	@Autowired
 	private UserAccountService userAccountService;
 
-	@Secured({"ROLE_ADMIN", "ROLE_TEACHER", "ROLE_USER"})
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@RequestMapping("/dashboard")
 	public ModelAndView dashboard() {
 		ModelAndView mv = new ModelAndView("dashboard/home");

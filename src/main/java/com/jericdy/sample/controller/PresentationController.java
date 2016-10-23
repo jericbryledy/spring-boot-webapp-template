@@ -19,7 +19,7 @@ public class PresentationController {
 	@Autowired
 	private UserAccountService userAccountService;
 
-	@Secured({"ROLE_ADMIN", "ROLE_TEACHER"})
+	@Secured({"ROLE_ADMIN"})
 	@RequestMapping("/presentation")
 	public ModelAndView presentationList() {
 		ModelAndView mv = new ModelAndView("presentation/list");
